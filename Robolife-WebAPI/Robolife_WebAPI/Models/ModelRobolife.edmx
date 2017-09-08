@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Xamarin_KURSATCAKAL_WebAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BodyAnalizeResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="BodyMeasureID" Type="int" />
+          <Property Name="Type1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type3" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BodyMeasure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Neck" Type="float" />
+          <Property Name="Shoulder" Type="float" />
+          <Property Name="Chest" Type="float" />
+          <Property Name="Biceps" Type="float" />
+          <Property Name="Waist" Type="float" />
+          <Property Name="Hips" Type="float" />
+          <Property Name="Thigs" Type="float" />
+          <Property Name="Calves" Type="float" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Length" Type="float" />
+        </EntityType>
+        <EntityType Name="BodyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="int" />
+          <Property Name="BodyMeasureID" Type="int" />
+        </EntityType>
+        <EntityType Name="CrashArea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="CrashRate" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="NutritionID" Type="int" />
+          <Property Name="SportPID" Type="int" />
+          <Property Name="BodyAnalizeID" Type="int" />
+          <Property Name="CrashAreaID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExercisesAct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="DescriptionURL" Type="nvarchar" MaxLength="150" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="TargetRegionID" Type="int" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Calori" Type="float" />
+          <Property Name="Protein" Type="float" />
+          <Property Name="Carbonhydrate" Type="float" />
+          <Property Name="Fat" Type="float" />
+          <Property Name="SeasonID" Type="int" />
+          <Property Name="Gram" Type="int" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ShortPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="MiddlePath" Type="nvarchar" MaxLength="250" />
+          <Property Name="LongPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MealTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NutrationProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="MealTimeID" Type="int" />
+          <Property Name="DayID" Type="int" />
+          <Property Name="FoodID" Type="int" />
+          <Property Name="Gram" Type="int" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SportProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="DayID" Type="int" />
+          <Property Name="ActID" Type="int" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="RepeatPercantage" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserIP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Xamarin_KURSATCAKAL_WebAPIModelStoreContainer">
+          <EntitySet Name="BodyAnalizeResult" EntityType="Self.BodyAnalizeResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyMeasure" EntityType="Self.BodyMeasure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CrashArea" EntityType="Self.CrashArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExercisesAct" EntityType="Self.ExercisesAct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MealTime" EntityType="Self.MealTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NutrationProgram" EntityType="Self.NutrationProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SportProgram" EntityType="Self.SportProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Xamarin_KURSATCAKAL_WebAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BodyAnalizeResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="BodyMeasureID" Type="Int32" />
+          <Property Name="Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BodyMeasure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Neck" Type="Double" />
+          <Property Name="Shoulder" Type="Double" />
+          <Property Name="Chest" Type="Double" />
+          <Property Name="Biceps" Type="Double" />
+          <Property Name="Waist" Type="Double" />
+          <Property Name="Hips" Type="Double" />
+          <Property Name="Thigs" Type="Double" />
+          <Property Name="Calves" Type="Double" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="Length" Type="Double" />
+        </EntityType>
+        <EntityType Name="BodyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="Int32" />
+          <Property Name="BodyMeasureID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CrashArea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CrashRate" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="NutritionID" Type="Int32" />
+          <Property Name="SportPID" Type="Int32" />
+          <Property Name="BodyAnalizeID" Type="Int32" />
+          <Property Name="CrashAreaID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ExercisesAct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptionURL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="TargetRegionID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Calori" Type="Double" />
+          <Property Name="Protein" Type="Double" />
+          <Property Name="Carbonhydrate" Type="Double" />
+          <Property Name="Fat" Type="Double" />
+          <Property Name="SeasonID" Type="Int32" />
+          <Property Name="Gram" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShortPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MiddlePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LongPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MealTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NutrationProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="MealTimeID" Type="Int32" />
+          <Property Name="DayID" Type="Int32" />
+          <Property Name="FoodID" Type="Int32" />
+          <Property Name="Gram" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SportProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="DayID" Type="Int32" />
+          <Property Name="ActID" Type="Int32" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="RepeatPercantage" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="UserIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Xamarin_KURSATCAKAL_WebAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BodyAnalizeResult" EntityType="Self.BodyAnalizeResult" />
+          <EntitySet Name="BodyMeasure" EntityType="Self.BodyMeasure" />
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" />
+          <EntitySet Name="CrashArea" EntityType="Self.CrashArea" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="ExercisesAct" EntityType="Self.ExercisesAct" />
+          <EntitySet Name="Food" EntityType="Self.Food" />
+          <EntitySet Name="Image" EntityType="Self.Image" />
+          <EntitySet Name="MealTime" EntityType="Self.MealTime" />
+          <EntitySet Name="NutrationProgram" EntityType="Self.NutrationProgram" />
+          <EntitySet Name="Season" EntityType="Self.Season" />
+          <EntitySet Name="SportProgram" EntityType="Self.SportProgram" />
+          <EntitySet Name="User" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Xamarin_KURSATCAKAL_WebAPIModelStoreContainer" CdmEntityContainer="Xamarin_KURSATCAKAL_WebAPIEntities">
+          <EntitySetMapping Name="BodyAnalizeResult">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyAnalizeResult">
+              <MappingFragment StoreEntitySet="BodyAnalizeResult">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+                <ScalarProperty Name="Type1" ColumnName="Type1" />
+                <ScalarProperty Name="Type2" ColumnName="Type2" />
+                <ScalarProperty Name="Type3" ColumnName="Type3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyMeasure">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyMeasure">
+              <MappingFragment StoreEntitySet="BodyMeasure">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Neck" ColumnName="Neck" />
+                <ScalarProperty Name="Shoulder" ColumnName="Shoulder" />
+                <ScalarProperty Name="Chest" ColumnName="Chest" />
+                <ScalarProperty Name="Biceps" ColumnName="Biceps" />
+                <ScalarProperty Name="Waist" ColumnName="Waist" />
+                <ScalarProperty Name="Hips" ColumnName="Hips" />
+                <ScalarProperty Name="Thigs" ColumnName="Thigs" />
+                <ScalarProperty Name="Calves" ColumnName="Calves" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyTypes">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyTypes">
+              <MappingFragment StoreEntitySet="BodyTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrashArea">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.CrashArea">
+              <MappingFragment StoreEntitySet="CrashArea">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CrashRate" ColumnName="CrashRate" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="NutritionID" ColumnName="NutritionID" />
+                <ScalarProperty Name="SportPID" ColumnName="SportPID" />
+                <ScalarProperty Name="BodyAnalizeID" ColumnName="BodyAnalizeID" />
+                <ScalarProperty Name="CrashAreaID" ColumnName="CrashAreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExercisesAct">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.ExercisesAct">
+              <MappingFragment StoreEntitySet="ExercisesAct">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DescriptionURL" ColumnName="DescriptionURL" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="TargetRegionID" ColumnName="TargetRegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Food">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Calori" ColumnName="Calori" />
+                <ScalarProperty Name="Protein" ColumnName="Protein" />
+                <ScalarProperty Name="Carbonhydrate" ColumnName="Carbonhydrate" />
+                <ScalarProperty Name="Fat" ColumnName="Fat" />
+                <ScalarProperty Name="SeasonID" ColumnName="SeasonID" />
+                <ScalarProperty Name="Gram" ColumnName="Gram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortPath" ColumnName="ShortPath" />
+                <ScalarProperty Name="MiddlePath" ColumnName="MiddlePath" />
+                <ScalarProperty Name="LongPath" ColumnName="LongPath" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MealTime">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.MealTime">
+              <MappingFragment StoreEntitySet="MealTime">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NutrationProgram">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.NutrationProgram">
+              <MappingFragment StoreEntitySet="NutrationProgram">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="MealTimeID" ColumnName="MealTimeID" />
+                <ScalarProperty Name="DayID" ColumnName="DayID" />
+                <ScalarProperty Name="FoodID" ColumnName="FoodID" />
+                <ScalarProperty Name="Gram" ColumnName="Gram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Season">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Season">
+              <MappingFragment StoreEntitySet="Season">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SportProgram">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.SportProgram">
+              <MappingFragment StoreEntitySet="SportProgram">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="DayID" ColumnName="DayID" />
+                <ScalarProperty Name="ActID" ColumnName="ActID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="RepeatPercantage" ColumnName="RepeatPercantage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

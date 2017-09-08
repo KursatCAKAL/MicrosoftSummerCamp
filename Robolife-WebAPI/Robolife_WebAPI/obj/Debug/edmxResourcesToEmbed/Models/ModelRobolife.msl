@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Xamarin_KURSATCAKAL_WebAPIModelStoreContainer" CdmEntityContainer="Xamarin_KURSATCAKAL_WebAPIEntities">
+    <EntitySetMapping Name="BodyAnalizeResult">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyAnalizeResult">
+        <MappingFragment StoreEntitySet="BodyAnalizeResult">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+          <ScalarProperty Name="Type1" ColumnName="Type1" />
+          <ScalarProperty Name="Type2" ColumnName="Type2" />
+          <ScalarProperty Name="Type3" ColumnName="Type3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BodyMeasure">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyMeasure">
+        <MappingFragment StoreEntitySet="BodyMeasure">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Neck" ColumnName="Neck" />
+          <ScalarProperty Name="Shoulder" ColumnName="Shoulder" />
+          <ScalarProperty Name="Chest" ColumnName="Chest" />
+          <ScalarProperty Name="Biceps" ColumnName="Biceps" />
+          <ScalarProperty Name="Waist" ColumnName="Waist" />
+          <ScalarProperty Name="Hips" ColumnName="Hips" />
+          <ScalarProperty Name="Thigs" ColumnName="Thigs" />
+          <ScalarProperty Name="Calves" ColumnName="Calves" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BodyTypes">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.BodyTypes">
+        <MappingFragment StoreEntitySet="BodyTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrashArea">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.CrashArea">
+        <MappingFragment StoreEntitySet="CrashArea">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CrashRate" ColumnName="CrashRate" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NutritionID" ColumnName="NutritionID" />
+          <ScalarProperty Name="SportPID" ColumnName="SportPID" />
+          <ScalarProperty Name="BodyAnalizeID" ColumnName="BodyAnalizeID" />
+          <ScalarProperty Name="CrashAreaID" ColumnName="CrashAreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExercisesAct">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.ExercisesAct">
+        <MappingFragment StoreEntitySet="ExercisesAct">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DescriptionURL" ColumnName="DescriptionURL" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="TargetRegionID" ColumnName="TargetRegionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Food">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Calori" ColumnName="Calori" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="Carbonhydrate" ColumnName="Carbonhydrate" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="SeasonID" ColumnName="SeasonID" />
+          <ScalarProperty Name="Gram" ColumnName="Gram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortPath" ColumnName="ShortPath" />
+          <ScalarProperty Name="MiddlePath" ColumnName="MiddlePath" />
+          <ScalarProperty Name="LongPath" ColumnName="LongPath" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MealTime">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.MealTime">
+        <MappingFragment StoreEntitySet="MealTime">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NutrationProgram">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.NutrationProgram">
+        <MappingFragment StoreEntitySet="NutrationProgram">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="MealTimeID" ColumnName="MealTimeID" />
+          <ScalarProperty Name="DayID" ColumnName="DayID" />
+          <ScalarProperty Name="FoodID" ColumnName="FoodID" />
+          <ScalarProperty Name="Gram" ColumnName="Gram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Season">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SportProgram">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.SportProgram">
+        <MappingFragment StoreEntitySet="SportProgram">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="DayID" ColumnName="DayID" />
+          <ScalarProperty Name="ActID" ColumnName="ActID" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="RepeatPercantage" ColumnName="RepeatPercantage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="Xamarin_KURSATCAKAL_WebAPIModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

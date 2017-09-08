@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Xamarin_KURSATCAKAL_WebAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BodyAnalizeResult">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="BodyMeasureID" Type="int" />
+    <Property Name="Type1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BodyMeasure">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Neck" Type="float" />
+    <Property Name="Shoulder" Type="float" />
+    <Property Name="Chest" Type="float" />
+    <Property Name="Biceps" Type="float" />
+    <Property Name="Waist" Type="float" />
+    <Property Name="Hips" Type="float" />
+    <Property Name="Thigs" Type="float" />
+    <Property Name="Calves" Type="float" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="Length" Type="float" />
+  </EntityType>
+  <EntityType Name="BodyTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="int" />
+    <Property Name="BodyMeasureID" Type="int" />
+  </EntityType>
+  <EntityType Name="CrashArea">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="CrashRate" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="NutritionID" Type="int" />
+    <Property Name="SportPID" Type="int" />
+    <Property Name="BodyAnalizeID" Type="int" />
+    <Property Name="CrashAreaID" Type="int" />
+  </EntityType>
+  <EntityType Name="ExercisesAct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="DescriptionURL" Type="nvarchar" MaxLength="150" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="TargetRegionID" Type="int" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Calori" Type="float" />
+    <Property Name="Protein" Type="float" />
+    <Property Name="Carbonhydrate" Type="float" />
+    <Property Name="Fat" Type="float" />
+    <Property Name="SeasonID" Type="int" />
+    <Property Name="Gram" Type="int" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="ShortPath" Type="nvarchar" MaxLength="250" />
+    <Property Name="MiddlePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="LongPath" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MealTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Time" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NutrationProgram">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="MealTimeID" Type="int" />
+    <Property Name="DayID" Type="int" />
+    <Property Name="FoodID" Type="int" />
+    <Property Name="Gram" Type="int" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SportProgram">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="DayID" Type="int" />
+    <Property Name="ActID" Type="int" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="RepeatPercantage" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="ImageID" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserIP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Xamarin_KURSATCAKAL_WebAPIModelStoreContainer">
+    <EntitySet Name="BodyAnalizeResult" EntityType="Self.BodyAnalizeResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BodyMeasure" EntityType="Self.BodyMeasure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CrashArea" EntityType="Self.CrashArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExercisesAct" EntityType="Self.ExercisesAct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MealTime" EntityType="Self.MealTime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NutrationProgram" EntityType="Self.NutrationProgram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SportProgram" EntityType="Self.SportProgram" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

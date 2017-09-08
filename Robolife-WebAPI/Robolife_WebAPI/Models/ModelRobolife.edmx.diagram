@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9dd76564a540439f9964220e9b989750" Name="Diagram1">
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.BodyAnalizeResult" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.BodyMeasure" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.BodyTypes" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.CrashArea" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.Customer" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.ExercisesAct" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.Food" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.Image" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.MealTime" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.NutrationProgram" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.Season" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.SportProgram" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKAL_WebAPIModel.User" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
