@@ -1,4 +1,5 @@
-MicrosoftSummerCamp
+#MicrosoftSummerCamp
+<br>
 Admin paneli için authentication default olarak ayarlıdır.Authentication için Back-End kısmında MVC Identity Membership kullanılmıştır.<br>
 
 http://kursatcakalrobolifeadmin.azurewebsites.net/ <br>
