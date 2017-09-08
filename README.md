@@ -9,7 +9,7 @@ Parametreler
         [Route("Robolife/GetUserById")]
         [Route("Robolife/PutUser/{id}/{user}")]
         [Route("Robolife/PostUser/{user}")]
-        [Route("Robolife/DeleteUser/{id}")]
+        [Route("Robolife/DeleteUser/{id}")][.....]
 
 
 ![alt text](https://github.com/KursatCAKAL/MicrosoftSummerCamp/blob/master/Robolife_Screenshoots/Robolife_AdminPanel_Nutration_Example.png)
