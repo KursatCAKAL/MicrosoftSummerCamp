@@ -1,4 +1,4 @@
-#MicrosoftSummerCamp
+<h6>Microsoft Summer Camp Project</h6>
 <br>
 Admin paneli için authentication default olarak ayarlıdır.Authentication için Back-End kısmında MVC Identity Membership kullanılmıştır.<br>
 
