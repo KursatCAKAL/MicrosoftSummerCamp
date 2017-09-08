@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="139.0dp"
+      android:id="@+id/linearLayout5">
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="44.5dp"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout3" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:id="@+id/imageView1"
+        android:layout_width="164.0dp"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="160.5dp"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout6">
+      <TextView
+          android:text="Kursat CAKAL"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView3" />
+      <FrameLayout
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="match_parent"
+          android:layout_height="27.0dp"
+          android:id="@+id/frameLayout4" />
+      <TextView
+          android:text="21"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView4" />
+      <FrameLayout
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="match_parent"
+          android:layout_height="27.0dp"
+          android:id="@+id/frameLayout5" />
+      <TextView
+          android:text="Erkek"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/textView5" />
+    </LinearLayout>
+  </LinearLayout>
+  <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="130.5dp"
+      android:id="@+id/linearLayout2">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="63.0dp"
+        android:id="@+id/linearLayout3">
+      <GridLayout
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="44.5dp"
+          android:layout_height="match_parent"
+          android:id="@+id/gridLayout1" />
+      <!--ETİKETJUST-->
+      <com.ebanx.swipebtn.SwipeButton
+          android:id="@+id/swipe_btn_son"
+          app:inner_text="Go Nutration Program"
+          app:inner_text_background="@drawable/shape_rounded"
+          app:inner_text_size="16sp"
+                   app:button_image_disabled="@drawable/ic_keyboard_arrow_left_black_24dp"
+          app:button_image_enabled="@drawable/ic_keyboard_arrow_right_black_24dp"
+          app:button_left_padding="20dp"
+          app:button_right_padding="20dp"
+          app:button_bottom_padding="20dp"
+          app:button_top_padding="20dp"
+          app:button_background="@drawable/shape_button"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60.5dp"
+        android:id="@+id/linearLayout4">
+      <GridLayout
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="44.5dp"
+          android:layout_height="match_parent"
+          android:id="@+id/gridLayout2" />
+      <com.ebanx.swipebtn.SwipeButton
+          android:id="@+id/swipe_btn_son"
+          app:inner_text="Go Sports Program"
+          app:inner_text_background="@drawable/shape_rounded"
+          app:inner_text_size="16sp"
+          app:button_image_disabled="@drawable/ic_keyboard_arrow_left_black_24dp"
+          app:button_image_enabled="@drawable/ic_keyboard_arrow_right_black_24dp"
+          app:button_left_padding="20dp"
+          app:button_right_padding="20dp"
+          app:button_bottom_padding="20dp"
+          app:button_top_padding="20dp"
+          app:button_background="@drawable/shape_button"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent" />
+    </LinearLayout>
+  </LinearLayout>
+  <LinearLayout
+      android:orientation="horizontal"
+      android:minWidth="25px"
+      android:minHeight="25px"
+      android:layout_width="match_parent"
+      android:layout_height="255.0dp"
+      android:id="@+id/linearLayout7">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="44.5dp"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout8" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="90.5dp"
+          android:layout_height="236.0dp"
+          android:id="@+id/linearLayout8">
+        <TextView
+            android:text="Length"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="60.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6" />
+        <TextView
+            android:text="Neck"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView8" />
+        <TextView
+            android:text="Shoulds"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9" />
+        <TextView
+            android:text="Chest"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView10" />
+        <TextView
+            android:text="Biceps"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView11" />
+        <TextView
+            android:text="Weist"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView12" />
+        <TextView
+            android:text="Hips"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView13" />
+        <TextView
+            android:text="Tihgs"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14" />
+        <TextView
+            android:text="Knee"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView15" />
+        <TextView
+            android:text="Calves"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="59.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView16" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="52.0dp"
+          android:layout_height="match_parent"
+          android:id="@+id/linearLayout9">
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="51.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdLength" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdNeck" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdShoulds" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdChest" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdBiceps" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdWeist" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdHips" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdTihgs" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdKnee" />
+        <TextView
+            android:text="Value"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rdKalves" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="43.5dp"
+          android:layout_height="match_parent"
+          android:id="@+id/linearLayout10">
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtEndomorph" />
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:id="@+id/txtEktomorph" />
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:id="@+id/txtMesomorph" />
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:id="@+id/textView31" />
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView32" />
+        <TextView
+            android:text="%0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView33" />
+      </LinearLayout>
+      <LinearLayout
+          android:orientation="vertical"
+          android:minWidth="25px"
+          android:minHeight="25px"
+          android:layout_width="102.5dp"
+          android:layout_height="match_parent"
+          android:id="@+id/linearLayout11">
+        <TextView
+            android:text="Endomorph"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView34" />
+        <TextView
+            android:text="Ektomorph"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView35" />
+        <TextView
+            android:text="Mesomorph"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView36" />
+        <TextView
+            android:text="V Type"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView37" />
+        <TextView
+            android:text="R Type"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView38" />
+        <TextView
+            android:text="I Type"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView39" />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

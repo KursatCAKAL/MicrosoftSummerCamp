@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    p1:orientation="horizontal"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1"
+    tools:gridSpec="1|8|#400000ff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="54.0dp"
+        p1:layout_height="617.0dp"
+        p1:id="@+id/linearLayout2"
+        p1:paddingTop="@dimen/abc_action_bar_icon_vertical_padding_material"
+        p1:backgroundTint="#fff0f8ff"
+        p1:backgroundTintMode="screen">
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:id="@+id/linearLayout6"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:backgroundTint="#ff0000ff">
+            <TextView
+                p1:text="Length"
+                p1:layout_width="44.5dp"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtBoyAd" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout1" />
+            <TextView
+                p1:text="Value"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtBoyDeger" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout2" />
+        <!--<TextView
+                p1:text="Weight"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtKiloAd" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout3" />-->
+        <!--<TextView
+                p1:text="Value"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtKiloDeger" />-->
+            <TextView
+                p1:text="Waist"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtKarinAd" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout5" />
+            <TextView
+                p1:text="Value"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtKarinDeger" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout6" />
+            <TextView
+                p1:text="Shoulds"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtOmuzAd" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout7" />
+            <TextView
+                p1:text="Value"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtOmuzDeger" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout8" />
+            <TextView
+                p1:text="Chest"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtChestAd" />
+            <FrameLayout
+                p1:minWidth="25px"
+                p1:minHeight="25px"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/frameLayout9" />
+            <TextView
+                p1:text="Value"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/txtChestDeger" />
+        </LinearLayout>
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout11" />
+        <TextView
+            p1:text="Hips"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtHips" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout10" />
+        <TextView
+            p1:text="Value"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtHipsValue" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout12" />
+        <TextView
+            p1:text="Thighs"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtThighs" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout13" />
+        <TextView
+            p1:text="Value"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtThigsValue" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout14" />
+        <TextView
+            p1:text="Calves"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtCalves" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout15" />
+        <TextView
+            p1:text="Value"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtCalvesValue" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout16" />
+        <TextView
+            p1:text="Neck"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtNeck" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout17" />
+        <TextView
+            p1:text="Value"
+            p1:textAppearance="?android:attr/textAppearanceSmall"
+            p1:layout_width="35.5dp"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtNeckValue" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout19" />
+        <TextView
+            p1:text="Knee"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtKnee" />
+        <FrameLayout
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/frameLayout18" />
+        <TextView
+            p1:text="Text"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/txtKneeValue" />
+    </LinearLayout>
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="330.5dp"
+        p1:layout_height="match_parent"
+        p1:id="@+id/linearLayout10">
+        <SurfaceView
+            p1:id="@+id/surface_view"
+            p1:layout_width="330.0dp"
+            p1:layout_height="486.0dp"
+            p1:layout_marginBottom="0.0dp" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="202.5dp"
+            p1:id="@+id/linearLayout12">
+            <LinearLayout
+                p1:orientation="vertical"
+                p1:layout_width="74.5dp"
+                p1:layout_height="70.5dp"
+                p1:id="@+id/linearLayout13">
+                <ImageView
+                    p1:src="@android:drawable/ic_menu_gallery"
+                    p1:id="@+id/imageCamera"
+                    p1:layout_width="match_parent"
+                    p1:layout_height="66.0dp" />
+            </LinearLayout>
+            <com.ebanx.swipebtn.SwipeButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                p1:id="@+id/swipeBtn_Data"
+                app:inner_text="Go"
+                app:inner_text_background="@drawable/shape_rounded"
+                app:inner_text_size="16sp"
+                app:button_left_padding="20dp"
+                app:button_right_padding="20dp"
+                app:button_bottom_padding="20dp"
+                app:button_top_padding="20dp"
+                app:button_background="@drawable/shape_button"
+                app:inner_text_color="@android:color/white"
+                app:inner_text_top_padding="18dp"
+                app:inner_text_bottom_padding="18dp"
+                app:button_image_enabled="@drawable/ic_keyboard_arrow_left_black_24dp"
+                app:button_image_disabled="@drawable/ic_keyboard_arrow_right_black_24dp"
+                p1:layout_width="wrap_content"
+                p1:layout_height="58.0dp" />
+        </LinearLayout>
+        <ImageView
+            p1:src="@android:drawable/ic_menu_gallery"
+            p1:id="@+id/imageData"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
