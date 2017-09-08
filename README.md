@@ -1,4 +1,14 @@
-# MicrosoftSummerCamp
+MicrosoftSummerCamp
+
+http://kursatcakalrobolifeadmin.azurewebsites.net/
+http://robolifewebapi.azurewebsites.net/
+Parametreler
+        [Route("Robolife/GetUsers")]
+        [Route("Robolife/GetUserById")]
+        [Route("Robolife/PutUser/{id}/{user}")]
+        [Route("Robolife/PostUser/{user}")]
+        [Route("Robolife/DeleteUser/{id}")]
+
 
 ![alt text](https://github.com/KursatCAKAL/MicrosoftSummerCamp/blob/master/Robolife_Screenshoots/Robolife_AdminPanel_Nutration_Example.png)
 
