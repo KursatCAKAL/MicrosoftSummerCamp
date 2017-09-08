@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75f4a5bb6a9f40fd826055a0c5774b0a" Name="Diagram1">
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.BodyAnalizeResult" Width="1.5" PointX="7.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.BodyMeasure" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.BodyTypes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.CrashArea" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.Customer" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.ExercisesAct" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.Food" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.Image" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.MealTime" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.NutrationProgram" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.Season" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.SportProgram" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xamarin_KURSATCAKALModel.User" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_BodyAnalizeResult_BodyMeasure" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_BodyMeasure_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_Customer_CrashArea" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_ExercisesAct_CrashArea" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_Customer_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_ExercisesAct_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_SportProgram_ExercisesAct" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_Food_Season" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_NutrationProgram_Food" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_SportProgram_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_User_Image" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_User_Image1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_NutrationProgram_MealTime1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_NutrationProgram_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Xamarin_KURSATCAKALModel.FK_SportProgram_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

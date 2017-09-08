@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Xamarin_KURSATCAKALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BodyAnalizeResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="BodyMeasureID" Type="int" />
+          <Property Name="Type1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type3" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BodyMeasure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Neck" Type="float" />
+          <Property Name="Shoulder" Type="float" />
+          <Property Name="Chest" Type="float" />
+          <Property Name="Biceps" Type="float" />
+          <Property Name="Waist" Type="float" />
+          <Property Name="Hips" Type="float" />
+          <Property Name="Thigs" Type="float" />
+          <Property Name="Calves" Type="float" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Length" Type="float" />
+        </EntityType>
+        <EntityType Name="BodyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="int" />
+          <Property Name="BodyMeasureID" Type="int" />
+        </EntityType>
+        <EntityType Name="CrashArea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="CrashRate" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="NutritionID" Type="int" />
+          <Property Name="SportPID" Type="int" />
+          <Property Name="BodyAnalizeID" Type="int" />
+          <Property Name="CrashAreaID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExercisesAct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="DescriptionURL" Type="nvarchar" MaxLength="150" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="TargetRegionID" Type="int" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Calori" Type="float" />
+          <Property Name="Protein" Type="float" />
+          <Property Name="Carbonhydrate" Type="float" />
+          <Property Name="Fat" Type="float" />
+          <Property Name="SeasonID" Type="int" />
+          <Property Name="Gram" Type="int" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ShortPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="MiddlePath" Type="nvarchar" MaxLength="250" />
+          <Property Name="LongPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MealTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NutrationProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="MealTimeID" Type="int" />
+          <Property Name="DayID" Type="int" />
+          <Property Name="FoodID" Type="int" />
+          <Property Name="Gram" Type="int" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SportProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="DayID" Type="int" />
+          <Property Name="ActID" Type="int" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="RepeatPercantage" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="UserIP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BodyAnalizeResult_BodyMeasure">
+          <End Role="BodyMeasure" Type="Self.BodyMeasure" Multiplicity="0..1" />
+          <End Role="BodyAnalizeResult" Type="Self.BodyAnalizeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BodyMeasure">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BodyAnalizeResult">
+              <PropertyRef Name="BodyMeasureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BodyMeasure_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="BodyMeasure" Type="Self.BodyMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BodyMeasure">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CrashArea">
+          <End Role="CrashArea" Type="Self.CrashArea" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrashArea">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CrashAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExercisesAct_CrashArea">
+          <End Role="CrashArea" Type="Self.CrashArea" Multiplicity="0..1" />
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrashArea">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExercisesAct">
+              <PropertyRef Name="TargetRegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExercisesAct_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExercisesAct">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Food_Season">
+          <End Role="Season" Type="Self.Season" Multiplicity="0..1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="SeasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_Food">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="FoodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_MealTime1">
+          <End Role="MealTime" Type="Self.MealTime" Multiplicity="0..1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MealTime">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="MealTimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_ExercisesAct">
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="0..1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExercisesAct">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="ActID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Image1">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Xamarin_KURSATCAKALModelStoreContainer">
+          <EntitySet Name="BodyAnalizeResult" EntityType="Self.BodyAnalizeResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyMeasure" EntityType="Self.BodyMeasure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CrashArea" EntityType="Self.CrashArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExercisesAct" EntityType="Self.ExercisesAct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MealTime" EntityType="Self.MealTime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NutrationProgram" EntityType="Self.NutrationProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SportProgram" EntityType="Self.SportProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BodyAnalizeResult_BodyMeasure" Association="Self.FK_BodyAnalizeResult_BodyMeasure">
+            <End Role="BodyMeasure" EntitySet="BodyMeasure" />
+            <End Role="BodyAnalizeResult" EntitySet="BodyAnalizeResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BodyMeasure_User" Association="Self.FK_BodyMeasure_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="BodyMeasure" EntitySet="BodyMeasure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CrashArea" Association="Self.FK_Customer_CrashArea">
+            <End Role="CrashArea" EntitySet="CrashArea" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_User" Association="Self.FK_Customer_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercisesAct_CrashArea" Association="Self.FK_ExercisesAct_CrashArea">
+            <End Role="CrashArea" EntitySet="CrashArea" />
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercisesAct_Image" Association="Self.FK_ExercisesAct_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Food_Season" Association="Self.FK_Food_Season">
+            <End Role="Season" EntitySet="Season" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_Food" Association="Self.FK_NutrationProgram_Food">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_MealTime1" Association="Self.FK_NutrationProgram_MealTime1">
+            <End Role="MealTime" EntitySet="MealTime" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_User" Association="Self.FK_NutrationProgram_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_ExercisesAct" Association="Self.FK_SportProgram_ExercisesAct">
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_Image" Association="Self.FK_SportProgram_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_User" Association="Self.FK_SportProgram_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Image" Association="Self.FK_User_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Image1" Association="Self.FK_User_Image1">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Xamarin_KURSATCAKALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BodyAnalizeResult">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="BodyMeasureID" Type="Int32" />
+          <Property Name="Type1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BodyMeasure" Relationship="Self.FK_BodyAnalizeResult_BodyMeasure" FromRole="BodyAnalizeResult" ToRole="BodyMeasure" />
+        </EntityType>
+        <EntityType Name="BodyMeasure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Neck" Type="Double" />
+          <Property Name="Shoulder" Type="Double" />
+          <Property Name="Chest" Type="Double" />
+          <Property Name="Biceps" Type="Double" />
+          <Property Name="Waist" Type="Double" />
+          <Property Name="Hips" Type="Double" />
+          <Property Name="Thigs" Type="Double" />
+          <Property Name="Calves" Type="Double" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="Length" Type="Double" />
+          <NavigationProperty Name="BodyAnalizeResult" Relationship="Self.FK_BodyAnalizeResult_BodyMeasure" FromRole="BodyMeasure" ToRole="BodyAnalizeResult" />
+          <NavigationProperty Name="User" Relationship="Self.FK_BodyMeasure_User" FromRole="BodyMeasure" ToRole="User" />
+        </EntityType>
+        <EntityType Name="BodyTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="Int32" />
+          <Property Name="BodyMeasureID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CrashArea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CrashRate" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_CrashArea" FromRole="CrashArea" ToRole="Customer" />
+          <NavigationProperty Name="ExercisesAct" Relationship="Self.FK_ExercisesAct_CrashArea" FromRole="CrashArea" ToRole="ExercisesAct" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="NutritionID" Type="Int32" />
+          <Property Name="SportPID" Type="Int32" />
+          <Property Name="BodyAnalizeID" Type="Int32" />
+          <Property Name="CrashAreaID" Type="Int32" />
+          <NavigationProperty Name="CrashArea" Relationship="Self.FK_Customer_CrashArea" FromRole="Customer" ToRole="CrashArea" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Customer_User" FromRole="Customer" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ExercisesAct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptionURL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="TargetRegionID" Type="Int32" />
+          <NavigationProperty Name="CrashArea" Relationship="Self.FK_ExercisesAct_CrashArea" FromRole="ExercisesAct" ToRole="CrashArea" />
+          <NavigationProperty Name="Image" Relationship="Self.FK_ExercisesAct_Image" FromRole="ExercisesAct" ToRole="Image" />
+          <NavigationProperty Name="SportProgram" Relationship="Self.FK_SportProgram_ExercisesAct" FromRole="ExercisesAct" ToRole="SportProgram" />
+        </EntityType>
+        <EntityType Name="Food">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Calori" Type="Double" />
+          <Property Name="Protein" Type="Double" />
+          <Property Name="Carbonhydrate" Type="Double" />
+          <Property Name="Fat" Type="Double" />
+          <Property Name="SeasonID" Type="Int32" />
+          <Property Name="Gram" Type="Int32" />
+          <NavigationProperty Name="Season" Relationship="Self.FK_Food_Season" FromRole="Food" ToRole="Season" />
+          <NavigationProperty Name="NutrationProgram" Relationship="Self.FK_NutrationProgram_Food" FromRole="Food" ToRole="NutrationProgram" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShortPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MiddlePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LongPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ExercisesAct" Relationship="Self.FK_ExercisesAct_Image" FromRole="Image" ToRole="ExercisesAct" />
+          <NavigationProperty Name="SportProgram" Relationship="Self.FK_SportProgram_Image" FromRole="Image" ToRole="SportProgram" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Image" FromRole="Image" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK_User_Image1" FromRole="Image" ToRole="User" />
+        </EntityType>
+        <EntityType Name="MealTime">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Time" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="NutrationProgram" Relationship="Self.FK_NutrationProgram_MealTime1" FromRole="MealTime" ToRole="NutrationProgram" />
+        </EntityType>
+        <EntityType Name="NutrationProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="MealTimeID" Type="Int32" />
+          <Property Name="DayID" Type="Int32" />
+          <Property Name="FoodID" Type="Int32" />
+          <Property Name="Gram" Type="Int32" />
+          <NavigationProperty Name="Food" Relationship="Self.FK_NutrationProgram_Food" FromRole="NutrationProgram" ToRole="Food" />
+          <NavigationProperty Name="MealTime" Relationship="Self.FK_NutrationProgram_MealTime1" FromRole="NutrationProgram" ToRole="MealTime" />
+          <NavigationProperty Name="User" Relationship="Self.FK_NutrationProgram_User" FromRole="NutrationProgram" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Season">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Food" Relationship="Self.FK_Food_Season" FromRole="Season" ToRole="Food" />
+        </EntityType>
+        <EntityType Name="SportProgram">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="DayID" Type="Int32" />
+          <Property Name="ActID" Type="Int32" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="RepeatPercantage" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ExercisesAct" Relationship="Self.FK_SportProgram_ExercisesAct" FromRole="SportProgram" ToRole="ExercisesAct" />
+          <NavigationProperty Name="Image" Relationship="Self.FK_SportProgram_Image" FromRole="SportProgram" ToRole="Image" />
+          <NavigationProperty Name="User" Relationship="Self.FK_SportProgram_User" FromRole="SportProgram" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="UserIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BodyMeasure" Relationship="Self.FK_BodyMeasure_User" FromRole="User" ToRole="BodyMeasure" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_User" FromRole="User" ToRole="Customer" />
+          <NavigationProperty Name="Image" Relationship="Self.FK_User_Image" FromRole="User" ToRole="Image" />
+          <NavigationProperty Name="Image1" Relationship="Self.FK_User_Image1" FromRole="User" ToRole="Image" />
+          <NavigationProperty Name="NutrationProgram" Relationship="Self.FK_NutrationProgram_User" FromRole="User" ToRole="NutrationProgram" />
+          <NavigationProperty Name="SportProgram" Relationship="Self.FK_SportProgram_User" FromRole="User" ToRole="SportProgram" />
+        </EntityType>
+        <Association Name="FK_BodyAnalizeResult_BodyMeasure">
+          <End Role="BodyMeasure" Type="Self.BodyMeasure" Multiplicity="0..1" />
+          <End Role="BodyAnalizeResult" Type="Self.BodyAnalizeResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BodyMeasure">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BodyAnalizeResult">
+              <PropertyRef Name="BodyMeasureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BodyMeasure_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="BodyMeasure" Type="Self.BodyMeasure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BodyMeasure">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CrashArea">
+          <End Role="CrashArea" Type="Self.CrashArea" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrashArea">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CrashAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExercisesAct_CrashArea">
+          <End Role="CrashArea" Type="Self.CrashArea" Multiplicity="0..1" />
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CrashArea">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExercisesAct">
+              <PropertyRef Name="TargetRegionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExercisesAct_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExercisesAct">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_ExercisesAct">
+          <End Role="ExercisesAct" Type="Self.ExercisesAct" Multiplicity="0..1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExercisesAct">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="ActID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Food_Season">
+          <End Role="Season" Type="Self.Season" Multiplicity="0..1" />
+          <End Role="Food" Type="Self.Food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Season">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Food">
+              <PropertyRef Name="SeasonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_Food">
+          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="FoodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Image">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Image1">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_MealTime1">
+          <End Role="MealTime" Type="Self.MealTime" Multiplicity="0..1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MealTime">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="MealTimeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NutrationProgram_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="NutrationProgram" Type="Self.NutrationProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="NutrationProgram">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SportProgram_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="SportProgram" Type="Self.SportProgram" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SportProgram">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Xamarin_KURSATCAKALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BodyAnalizeResult" EntityType="Self.BodyAnalizeResult" />
+          <EntitySet Name="BodyMeasure" EntityType="Self.BodyMeasure" />
+          <EntitySet Name="BodyTypes" EntityType="Self.BodyTypes" />
+          <EntitySet Name="CrashArea" EntityType="Self.CrashArea" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="ExercisesAct" EntityType="Self.ExercisesAct" />
+          <EntitySet Name="Food" EntityType="Self.Food" />
+          <EntitySet Name="Image" EntityType="Self.Image" />
+          <EntitySet Name="MealTime" EntityType="Self.MealTime" />
+          <EntitySet Name="NutrationProgram" EntityType="Self.NutrationProgram" />
+          <EntitySet Name="Season" EntityType="Self.Season" />
+          <EntitySet Name="SportProgram" EntityType="Self.SportProgram" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_BodyAnalizeResult_BodyMeasure" Association="Self.FK_BodyAnalizeResult_BodyMeasure">
+            <End Role="BodyMeasure" EntitySet="BodyMeasure" />
+            <End Role="BodyAnalizeResult" EntitySet="BodyAnalizeResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BodyMeasure_User" Association="Self.FK_BodyMeasure_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="BodyMeasure" EntitySet="BodyMeasure" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CrashArea" Association="Self.FK_Customer_CrashArea">
+            <End Role="CrashArea" EntitySet="CrashArea" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercisesAct_CrashArea" Association="Self.FK_ExercisesAct_CrashArea">
+            <End Role="CrashArea" EntitySet="CrashArea" />
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_User" Association="Self.FK_Customer_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercisesAct_Image" Association="Self.FK_ExercisesAct_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_ExercisesAct" Association="Self.FK_SportProgram_ExercisesAct">
+            <End Role="ExercisesAct" EntitySet="ExercisesAct" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Food_Season" Association="Self.FK_Food_Season">
+            <End Role="Season" EntitySet="Season" />
+            <End Role="Food" EntitySet="Food" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_Food" Association="Self.FK_NutrationProgram_Food">
+            <End Role="Food" EntitySet="Food" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_Image" Association="Self.FK_SportProgram_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Image" Association="Self.FK_User_Image">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Image1" Association="Self.FK_User_Image1">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_MealTime1" Association="Self.FK_NutrationProgram_MealTime1">
+            <End Role="MealTime" EntitySet="MealTime" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NutrationProgram_User" Association="Self.FK_NutrationProgram_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="NutrationProgram" EntitySet="NutrationProgram" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SportProgram_User" Association="Self.FK_SportProgram_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="SportProgram" EntitySet="SportProgram" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Xamarin_KURSATCAKALModelStoreContainer" CdmEntityContainer="Xamarin_KURSATCAKALEntities">
+          <EntitySetMapping Name="BodyAnalizeResult">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.BodyAnalizeResult">
+              <MappingFragment StoreEntitySet="BodyAnalizeResult">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+                <ScalarProperty Name="Type1" ColumnName="Type1" />
+                <ScalarProperty Name="Type2" ColumnName="Type2" />
+                <ScalarProperty Name="Type3" ColumnName="Type3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyMeasure">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.BodyMeasure">
+              <MappingFragment StoreEntitySet="BodyMeasure">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Neck" ColumnName="Neck" />
+                <ScalarProperty Name="Shoulder" ColumnName="Shoulder" />
+                <ScalarProperty Name="Chest" ColumnName="Chest" />
+                <ScalarProperty Name="Biceps" ColumnName="Biceps" />
+                <ScalarProperty Name="Waist" ColumnName="Waist" />
+                <ScalarProperty Name="Hips" ColumnName="Hips" />
+                <ScalarProperty Name="Thigs" ColumnName="Thigs" />
+                <ScalarProperty Name="Calves" ColumnName="Calves" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BodyTypes">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.BodyTypes">
+              <MappingFragment StoreEntitySet="BodyTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="BodyMeasureID" ColumnName="BodyMeasureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CrashArea">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.CrashArea">
+              <MappingFragment StoreEntitySet="CrashArea">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CrashRate" ColumnName="CrashRate" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="NutritionID" ColumnName="NutritionID" />
+                <ScalarProperty Name="SportPID" ColumnName="SportPID" />
+                <ScalarProperty Name="BodyAnalizeID" ColumnName="BodyAnalizeID" />
+                <ScalarProperty Name="CrashAreaID" ColumnName="CrashAreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExercisesAct">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.ExercisesAct">
+              <MappingFragment StoreEntitySet="ExercisesAct">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DescriptionURL" ColumnName="DescriptionURL" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="TargetRegionID" ColumnName="TargetRegionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Food">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.Food">
+              <MappingFragment StoreEntitySet="Food">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Calori" ColumnName="Calori" />
+                <ScalarProperty Name="Protein" ColumnName="Protein" />
+                <ScalarProperty Name="Carbonhydrate" ColumnName="Carbonhydrate" />
+                <ScalarProperty Name="Fat" ColumnName="Fat" />
+                <ScalarProperty Name="SeasonID" ColumnName="SeasonID" />
+                <ScalarProperty Name="Gram" ColumnName="Gram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortPath" ColumnName="ShortPath" />
+                <ScalarProperty Name="MiddlePath" ColumnName="MiddlePath" />
+                <ScalarProperty Name="LongPath" ColumnName="LongPath" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MealTime">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.MealTime">
+              <MappingFragment StoreEntitySet="MealTime">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NutrationProgram">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.NutrationProgram">
+              <MappingFragment StoreEntitySet="NutrationProgram">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="MealTimeID" ColumnName="MealTimeID" />
+                <ScalarProperty Name="DayID" ColumnName="DayID" />
+                <ScalarProperty Name="FoodID" ColumnName="FoodID" />
+                <ScalarProperty Name="Gram" ColumnName="Gram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Season">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.Season">
+              <MappingFragment StoreEntitySet="Season">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SportProgram">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.SportProgram">
+              <MappingFragment StoreEntitySet="SportProgram">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="DayID" ColumnName="DayID" />
+                <ScalarProperty Name="ActID" ColumnName="ActID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="RepeatPercantage" ColumnName="RepeatPercantage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="Xamarin_KURSATCAKALModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
