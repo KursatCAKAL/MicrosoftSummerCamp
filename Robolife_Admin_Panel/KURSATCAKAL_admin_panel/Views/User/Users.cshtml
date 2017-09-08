@@ -1,0 +1,259 @@
+﻿@using Robolife_Admin_Data_Layer
+@model List<User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+@helper Gender_Converter(bool? boolean)
+{
+switch (boolean)
+{
+    case true:
+            <span>Erkek</span>
+        break;
+    case false:
+            <span>Kadın</span>
+        break;
+    default:
+        break;
+}
+
+}
+@helper Activity_Converter(bool? boolean)
+{
+switch (boolean)
+{
+    case true:
+            <span>Active User</span>
+        break;
+    case false:
+            <span>Passive User</span>
+        break;
+    default:
+        break;
+}
+
+}
+<div class="page-header">
+    <h1>
+        Data Tables ><small>
+            User Table
+
+
+        </small>
+    </h1>
+
+</div>
+<div class="col-md-12" align="center">
+
+
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal6">
+        User Manage
+    </button>
+    <h3 style="color:red">
+
+        @TempData["UserAddUpdateException"]
+        @TempData["UserDeleteException"]
+        @TempData["DeleteSuccess"]
+        @TempData["AdditionSuccess"]
+        @{
+
+            TempData["UserAddUpdateException"] = "";
+
+            TempData["UserDeleteException"] = "";
+
+            TempData["DeleteSuccess"] = "";
+
+            TempData["AdditionSuccess"] = "";
+        }
+
+
+
+    </h3>
+</div>
+<div class="modal modal-success fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-body" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">User</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="col-md-14">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">User Management</h3>
+                        </div>
+                        @using (Html.BeginForm("UserAddUpdate", "User", FormMethod.Post))
+                        {
+
+                            <div class="panel-body">
+
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputName" class="col-sm-2 control-label pull-left">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="inputName" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputSurname" class="col-sm-2 control-label pull-left">Surname</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="inputSurname" class="form-control" id="inputSurname" placeholder="Surname">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputMail" class="col-sm-2 control-label pull-left">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="inputEmail" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAge" class="col-sm-2 control-label pull-left">Age</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="inputAge" class="form-control" id="inputAge" placeholder="Age">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputImage" class="col-sm-2 control-label pull-left">Image</label>
+                                        <div class="col-sm-10">
+                                            <select name="imageID" class="form-control custom-Select">
+                                                @foreach (Image item in ViewBag.Images)
+                                                {
+
+                                                    <option value="@item.ID">
+                                                        @item.Name [CDate--->] @item.CreationDate
+                                                    </option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="inputGender" class="col-sm-2 control-label pull-left">Gender</label>
+                                        <div class="col-sm-10">
+                                            <select name="inputGender" class="form-control custom-Select">
+                                                <option name="dayIDGiden" value="True">Erkek</option>
+                                                <option name="dayIDGiden" value="False">Kadın</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputActivity" class="col-sm-2 control-label pull-left">Activity</label>
+                                        <div class="col-sm-10">
+                                            <select name="cinsiyetIDGiden" class="form-control custom-Select">
+                                                <option name="dayIDGiden" value="True">Aktif</option>
+                                                <option name="dayIDGiden" value="False">Pasif</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-sm-10">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox1" class="styled" type="checkbox" checked>
+                                                <label for="checkbox1">I agree to the terms</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-sm-10">
+                                            <button type="submit" name="addButton" class="btn btn-success">Add</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>User IP</th>
+                                <th>Registeration Date</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Image</th>
+                                <td>Activity</td>
+                                <td>Update</td>
+                                <td>Delete</td>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>User IP</th>
+                                <th>Registeration Date</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Image</th>
+                                <td>Activity</td>
+                                <td>Update</td>
+                                <td>Delete</td>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (User item in Model)
+                            {
+
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Surname</td>
+                                    <td>@item.UserIP</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>@item.Email</td>
+                                    <td>@Gender_Converter(@item.Gender)</td>
+                                    <td>
+                                        <img class="col-lg-offset-2" align="middle" style="width:120px; height:120px;" src="@item.Image.MiddlePath" />
+                                    </td>
+                                    <td>@Activity_Converter(@item.IsActive)</td>
+
+                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-lg col-md-offset-2">Update</button></td>
+                                    <td class="col-sm-1">
+
+
+                                        @Html.ActionLink("       Delete       ", "UserDelete", "User", new { @userID = item.ID }, new { @class = "btn btn-danger btn-lg col-md-offset-2" })
+                                        @*<button type="button" class="btn btn-danger btn-lg">Delete</button>*@
+
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

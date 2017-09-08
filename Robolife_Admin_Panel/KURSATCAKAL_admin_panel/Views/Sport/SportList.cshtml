@@ -1,0 +1,262 @@
+﻿@using Robolife_Admin_Data_Layer
+
+@model List<SportProgram>
+
+@{
+    ViewBag.Title = "SportList";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+
+
+
+@helper DayIdConverterHelperMethod(int? dayID)
+{
+switch (dayID)
+{
+    case 1:
+            <span>Pazartesi</span>
+        break;
+    case 2:
+            <span>Salı</span>
+        break;
+    case 3:
+            <span>Çarşamba</span>
+        break;
+    case 4:
+            <span>Perşembe</span>
+        break;
+    case 5:
+            <span>Cuma</span>
+        break;
+    case 6:
+            <span>Cumartesi</span>
+        break;
+    case 7:
+            <span>Pazar</span>
+        break;
+    default:
+            <span>None</span>
+        break;
+}
+}
+
+
+
+
+
+
+<div class="page-header">
+    <h1>
+        Data Tables ><small>
+            Sport Table
+
+
+        </small>
+    </h1>
+
+</div>
+<div class="col-md-12" align="center">
+
+
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal6">
+        Sport Program Manage
+    </button>
+    <h3 style="color:red">
+
+        @TempData["SportPieceDeleteException"]
+        @TempData["SportAddUpdateException"]
+        @TempData["DeleteSuccess"]
+        @TempData["AdditionSuccess"]
+        @{
+            TempData["SportPieceDeleteException"] = "";
+            TempData["SportAddUpdateException"] = "";
+            TempData["DeleteSuccess"] = "";
+            TempData["AdditionSuccess"] = "";
+        }
+
+
+    </h3>
+</div>
+<div class="modal modal-success fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-body" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sports</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="col-md-14">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Sport Management</h3>
+                        </div>
+                        @using (Html.BeginForm("SportAddUpdate", "Sport", FormMethod.Post))
+                        {
+
+                            <div class="panel-body">
+
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputImage" class="col-sm-3 control-label pull-left">Image</label>
+                                        <div class="col-sm-9">
+                                            <select name="imageID" class="form-control custom-Select">
+                                                @foreach (Image item in ViewBag.Images)
+                                                {
+
+                                                    <option value="@item.ID">
+                                                        @item.Name [CDate--->] @item.CreationDate
+                                                    </option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAct" class="col-sm-3 control-label pull-left">Act Name</label>
+                                        <div class="col-sm-9">
+                                            <select name="actID" class="form-control custom-Select">
+                                                @foreach (ExercisesAct item in ViewBag.Acts)
+                                                {
+
+                                                    <option value="@item.ID">@item.Name</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputDayName" class="col-sm-3 control-label pull-left">Day</label>
+                                        <div class="col-sm-9">
+                                            <select name="dayID" class="form-control custom-Select">
+                                                <option name="dayIDGiden" value="1">Pazartesi</option>
+                                                <option name="dayIDGiden" value="2">Salı</option>
+                                                <option name="dayIDGiden" value="3">Çarşamba</option>
+                                                <option name="dayIDGiden" value="4">Perşembe</option>
+                                                <option name="dayIDGiden" value="5">Cuma</option>
+                                                <option name="dayIDGiden" value="6">Cumartesi</option>
+                                                <option name="dayIDGiden" value="7">Pazar</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label pull-left">Person</label>
+                                        <div class="col-sm-9">
+                                            <select name="userID" class="form-control custom-Select">
+                                                @foreach (User item in ViewBag.Person_To_Customer)
+                                                {
+
+                                                    <option value="@item.ID">@item.Name  @item.Surname</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputRepeatPercentage" class="col-sm-3 control-label pull-left">Repeat Percentage</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="inputRepeatPercentage" class="form-control" id="inputRepeatPercentage" placeholder="Repeat Percantage">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox1" class="styled" type="checkbox" checked>
+                                                <label for="checkbox1">I agree to the terms</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" name="addButton" class="btn btn-success">Add</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+    <!--START: Content Wrap-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Person Name</th>
+                                <th>Day</th>
+                                <th>Act</th>
+                                <th>Repeat Percentage</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Person Name</th>
+                                <th>Day</th>
+                                <th>Act</th>
+                                <th>Repeat Percentage</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (SportProgram item in Model)
+                            {
+
+                                <tr>
+                                    <td><img style="width:50px;height:50px;" src="@item.User.Image.MiddlePath" /> @item.User.Name @item.User.Surname </td>
+                                    <td>
+                                        @DayIdConverterHelperMethod(item.DayID)
+                                    </td>
+                                    <td><img style="width:50px;height:50px;" src="@item.Image.MiddlePath" /> @item.ExercisesAct.Name</td>
+                                    <td>@item.RepeatPercantage</td>
+
+                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-lg col-md-offset-2">Update</button></td>
+                                    <td class="col-sm-1">
+
+
+                                        @Html.ActionLink("       Delete       ", "SportDelete", "Sport", new { @sportPieceID = item.ID }, new { @class = "btn btn-danger btn-lg col-md-offset-2" })
+                                        @*<button type="button" class="btn btn-danger btn-lg">Delete</button>*@
+
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

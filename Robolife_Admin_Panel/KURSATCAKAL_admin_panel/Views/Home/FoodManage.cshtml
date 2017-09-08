@@ -1,0 +1,82 @@
+﻿@using Robolife_Admin_Data_Layer
+
+@{
+    ViewBag.Title = "FoodManage";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+    <div class="col-md-14">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Food Management</h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputFoodName" class="col-sm-4 control-label pull-left">Food Name</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodName" class="form-control" id="inputFoodName" placeholder="Food Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodCalori" class="col-sm-4 control-label pull-left">Calori</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodCalori" class="form-control" id="inputFoodCalori" placeholder="Calori">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodCarbonhydrate" class="col-sm-4 control-label pull-left">Carbonhydrate</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodCarbonhydrate" class="form-control" id="inputFoodCarbonhydrate" placeholder="Carbonhydrate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodProtein" class="col-sm-4 control-label pull-left">Protein</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodProtein" class="form-control" id="inputFoodProtein" placeholder="Protein">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodFat" class="col-sm-4 control-label pull-left">Fat</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodFat" class="form-control" id="inputFoodFat" placeholder="Fat">
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodGram" class="col-sm-4 control-label pull-left">Gram</label>
+                    <div class="col-sm-3">
+                        <input type="text" name="inputFoodGram" class="form-control" id="inputFoodGram" placeholder="Gram">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-4 control-label pull-left">Simple</label>
+                    <div class="col-sm-3">
+                        <select name="somename" class="form-control custom-Select">
+                            @foreach (Season item in ViewBag.Seasons)
+                            {
+
+                            <option name="seasonIDGiden" value="@item.ID">@item.Name</option>
+
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <div class="checkbox checkbox-primary">
+                            <input id="checkbox1" class="styled" type="checkbox" checked>
+                            <label for="checkbox1">I agree to the terms</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-10">
+                        <button type="submit" name="addButton" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

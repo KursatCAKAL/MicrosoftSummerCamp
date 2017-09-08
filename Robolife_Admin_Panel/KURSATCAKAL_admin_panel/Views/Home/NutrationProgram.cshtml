@@ -1,0 +1,70 @@
+﻿@using Robolife_Admin_Data_Layer
+@model IEnumerable<NutrationProgram>
+
+@{
+    ViewBag.Title = "NutrationProgram";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="page-header">
+    <h1>Data Tables <small>Bootstrap Data Table</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php">Tables</a></li>
+        <li class="active">Data Table</li>
+    </ol>
+</div>
+
+<div class="content-wrap">
+    <!--START: Content Wrap-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gram</th>
+                                <th>MealTime</th>
+                                <th>Day</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gram</th>
+                                <th>MealTime</th>
+                                <th>Day</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                                @foreach (NutrationProgram item in Model)
+                                {
+                            <tr>
+
+                                    <td>@item.Food.Name</td>
+                                    <td>@item.Gram</td>
+                                    <td>@item.MealTime.Name</td>
+                                    <td>@item.DayID</td>
+                            </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>  

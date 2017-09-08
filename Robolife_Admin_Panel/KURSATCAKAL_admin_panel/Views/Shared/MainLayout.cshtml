@@ -1,0 +1,341 @@
+﻿@using Robolife_Admin_Data_Layer
+@{
+
+
+    Layout = null;
+
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Robolife</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="KURSAT CAKAL">
+    <meta name="description" content="">
+    <!--[if IE]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/lib/modernizr.js"></script>
+    <link rel="icon" href="https://www.konzolvilag.hu/view/phantoms/Konzolvilag/images/cats/jatekok/pc-szoftver.png" type="image/gif">
+
+
+    <link rel="stylesheet" type="text/css" href="~/Html_Empty/assets/plugins/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Html_Empty/assets/plugins/datatable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Html_Empty/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/Html_Empty/assets/css/style-default.css">
+    <link rel="stylesheet" type="text/css" media="all" href="~/Html_Empty/assets/plugins/fullcalendar/fullcalendar.css" />
+</head>
+<body>
+
+    <div class="wrapper has-footer">
+
+        <header class="header-top navbar fixed-top">
+
+            <div class="top-bar">
+
+                <div class="container">
+                    <div class="main-search">
+                        <div class="input-wrap">
+                            <input class="form-control" type="text" placeholder="Search Here...">
+                            <a href=""><i class="sli-magnifier"></i></a>
+                        </div>
+                        <span class="close-search search-toggle"><i class="ti-close"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle side-nav-toggle">
+                    <i class="ti-align-left"></i>
+                </button>
+                <a class="navbar-brand" href="/Home/Index">
+                    <img src="https://www.konzolvilag.hu/view/phantoms/Konzolvilag/images/cats/jatekok/pc-szoftver.png">
+                    <span>Robolife</span>
+                </a>
+                <ul class="nav navbar-nav-xs">
+
+                    <li>
+                        <a href="javascript:;" class="collapse" data-toggle="collapse" data-target="#headerNavbarCollapse">
+                            <i class="sli-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="search-toggle">
+                            <i class="sli-magnifier"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="headerNavbarCollapse">
+
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden-xs">
+                        <a href="javascript:;" class="sidenav-size-toggle">
+                            <i class="ti-align-left"></i>
+                        </a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="sli-bell"></i>
+                            <div class="new-alert active"></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-lg list-group-dropdown">
+                            <li class="no-link">2 New Notifications</li>
+                            <li>
+                                <a href="#">
+                                    <div class="user-list-wrap">
+                                        <div class="profile-pic profile-icon"><i class="ti-file"></i></div>
+                                        <div class="detail">
+                                            <span class="text-normal">Kadir CAKAL</span>
+                                            <span class="time">3 hrs ago</span>
+                                            <p class="font-11 no-m-b text-overflow">Sent you a file</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="user-list-wrap">
+                                        <div class="profile-pic profile-icon"><i class="ti-email"></i></div>
+                                        <div class="detail">
+                                            <span class="text-normal">Büsra CAKAL</span>
+                                            <span class="time">Jun 03, 2015</span>
+                                            <p class="font-11 no-m-b text-overflow">Sent you a message</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li><a href="#" class="text-center">See all</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="sli-envelope"></i>
+                            <span class="badge bg-danger">2</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-lg list-group-dropdown">
+
+                            <li class="no-link font-12">You have 2 new notifications</li>
+
+                            <li>
+                                <a href="#">
+                                    <div class="user-list-wrap">
+                                        <div class="profile-pic"><img src="demo/users/img-user-02.jpg" alt=""></div>
+                                        <div class="detail">
+                                            <span class="text-normal">Kadir CAKAL</span>
+                                            <span class="time">2 mins ago</span>
+                                            <p class="font-11 no-m-b text-overflow">Start following you</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <div class="user-list-wrap">
+                                        <div class="profile-pic"><img src="demo/users/img-user-03.jpg" alt=""></div>
+                                        <div class="detail">
+                                            <span class="text-normal">Busra CAKAL</span>
+                                            <span class="time">1 hr ago</span>
+                                            <p class="font-11 no-m-b text-overflow">Accepted your friend request</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li><a href="#" class="text-center">See all</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="main-search hidden-xs">
+                        <div class="input-wrap">
+                            <input class="form-control" type="text" placeholder="Search Here...">
+                            <a href=""><i class="sli-magnifier"></i></a>
+                        </div>
+                    </li>
+
+                    <li class="user-profile dropdown">
+                        <a href="javascript:;" class="clearfix dropdown-toggle" data-toggle="dropdown">
+                            @{ 
+                                Xamarin_KURSATCAKALEntities DB = new Xamarin_KURSATCAKALEntities();
+
+                            }
+
+                            <img src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" alt="" class="hidden-sm">
+                            <div class="user-name">Kursat CAKAL<small class="fa fa-angle-down"></small></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
+                            <li><a href=""><i class="sli-user"></i> My Profile</a></li>
+                            <li><a href=""><i class="sli-calendar"></i> Calendar</a></li>
+                            <li><a href=""><i class="fa fa-envelope-o"></i> Inbox</a></li>
+
+                            <li role="separator" class="divider"></li>
+
+                            <li><a href=""><i class="sli-question"></i> FAQ's</a></li>
+                            <li><a href=""><i class="sli-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </header>
+
+        <aside class="side-navigation-wrap sidebar-fixed">
+
+            <div class="sidenav-inner">
+
+                <ul class="side-nav magic-nav">
+
+                    <li class="side-nav-header">Hoş Geldiniz</li>
+
+
+
+                    <li class="has-submenu">
+                        <a href="#submenuOne" data-toggle="collapse" aria-expanded="false">
+                            <i class="fs-grid-6"></i>
+                            <span class="nav-text">Tables</span>
+                        </a>
+                        <div class="sub-menu collapse secondary" id="submenuOne">
+                            <ul>
+                                <li><a href="/Food/DataFoodList">Food Tables</a></li>
+                                <li><a href="/Nutration/ProgramList">Nutration Tables</a></li>
+                                <li><a href="/User/Users">User Tables</a></li>
+                                <li><a href="/Sport/SportList">Sport Program Tables</a></li>
+                                <li><a href="/Image/ImageList">Image Tables</a></li>
+                                <li><a href="/Exercises/ExerciseList">Exercise Tables</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
+                    <li class="has-submenu">
+                        <a href="#submenuNine" data-toggle="collapse" aria-expanded="false">
+                            <i class="sli-trophy"></i>
+                            <span class="nav-text">Applications</span>
+                        </a>
+                        <div class="sub-menu collapse secondary" id="submenuNine">
+                            <ul>
+                                <li><a href="/Nutration/CalenderNutration">Calender Nutration</a></li>
+                                <li><a href="/Sport/SportList">Calender Sport</a></li>
+                                <li><a href="/Nutration/ProgramList">Nutration Program</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    <li class="side-nav-header">Project Progress</li>
+
+
+
+                    <li class="milestone">
+                        <a href="#">
+                            UX Design
+                            <small class="pull-right">10/10</small>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar" style="width: 100%;"></div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="milestone">
+                        <a href="#">
+                            Frontend Development
+                            <small class="pull-right">10/10</small>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info" style="width: 100%;"></div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="milestone">
+                        <a href="#">
+                            Backend Development
+                            <small class="pull-right">10/10</small>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-success" style="width: 100%;"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="milestone">
+                        <a href="#">
+                            Image Proccessing Development
+                            <small class="pull-right">4/10</small>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-danger" style="width: 40%;"></div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="milestone">
+                        <a href="#">
+                            Data Management Development
+                            <small class="pull-right">9/10</small>
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-bar-warning" style="width: 90%;"></div>
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </aside>
+ 
+
+        <div class="main-container">
+
+
+
+            @RenderBody()
+
+
+
+        </div> 
+
+
+
+        <footer class="footer">
+            &copy; @DateTime.Now.ToLongDateString() &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Robolife</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kursat CAKAL
+        </footer>   
+
+
+    </div> 
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/lib/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/lib/plugins.js"></script>
+
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/plugins/datatable/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/js/app.base.js"></script>
+    <script type="text/javascript" src="~/Html_Empty/assets/js/page-table.js"></script>
+
+   
+    <script>
+        jQuery(document).ready(function () {
+            DataTableBasic.init();
+        });
+    </script>
+
+</body>
+</html>

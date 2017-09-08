@@ -1,0 +1,16 @@
+﻿@using Robolife_Admin_Data_Layer
+@model List<NutrationProgram>
+@{
+    ViewBag.Title = "CalenderNutration";
+    Layout = "~/Views/Shared/NutrationCalenderLayout.cshtml";
+}
+<span>
+    @foreach (NutrationProgram item in Model)
+    {
+        @item.Food.Name
+        @item.Gram
+        @item.MealTime.Name
+    }
+
+    
+</span>

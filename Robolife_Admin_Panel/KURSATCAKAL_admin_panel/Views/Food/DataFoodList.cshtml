@@ -1,0 +1,215 @@
+﻿
+
+
+@using System.Web.Optimization;
+@using Robolife_Admin_Data_Layer
+@model IEnumerable<Food>
+
+@{
+    ViewBag.Title = "DataFoodList";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+
+<div class="page-header">
+    <h1>Data Tables ><small>Food Data Table
+          
+          
+          </small></h1>
+  
+</div>
+<div class="col-md-12" align="center"  >
+
+
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal6">
+    Food Manage
+</button>
+<h3 style="color:red">
+
+    @TempData["FoodDeleteException"]
+    @TempData["FoodAddUpdateException"]
+    @TempData["DeleteSuccess"] 
+    @TempData["AdditionSuccess"]
+
+    @{
+        TempData["FoodDeleteException"] = "";
+        TempData["FoodAddUpdateException"] = "";
+        TempData["AdditionSuccess"] = "";
+        TempData["DeleteSuccess"] = "";
+    }
+</h3>
+</div>
+<div class="modal modal-success fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-body" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Food</h4>
+            </div>
+            <div class="modal-body">
+                
+                <div class="col-md-14">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Food Management</h3>
+                        </div>
+                        @using (Html.BeginForm("FoodAddUpdate","Food",FormMethod.Post))
+                        {
+
+                        <div class="panel-body">
+
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputFoodName" class="col-sm-4 control-label pull-left">Food Name</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodName" class="form-control" id="inputFoodName" placeholder="Food Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFoodCalori" class="col-sm-4 control-label pull-left">Calori</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodCalori" class="form-control" id="inputFoodCalori" placeholder="Calori">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFoodCarbonhydrate" class="col-sm-4 control-label pull-left">Carbonhydrate</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodCarbonhydrate" class="form-control" id="inputFoodCarbonhydrate" placeholder="Carbonhydrate">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFoodProtein" class="col-sm-4 control-label pull-left">Protein</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodProtein" class="form-control" id="inputFoodProtein" placeholder="Protein">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFoodFat" class="col-sm-4 control-label pull-left">Fat</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodFat" class="form-control" id="inputFoodFat" placeholder="Fat">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFoodGram" class="col-sm-4 control-label pull-left">Gram</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="inputFoodGram" class="form-control" id="inputFoodGram" placeholder="Gram">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label pull-left">Season</label>
+                                    <div class="col-sm-6">
+                                        <select name="seasonIDGiden" class="form-control custom-Select">
+                                            @foreach (Season item in ViewBag.Seasons)
+                                            {
+
+                                                <option value="@item.ID">@item.Name</option>
+
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <div class="checkbox checkbox-primary">
+                                            <input id="checkbox1" class="styled" type="checkbox" checked>
+                                            <label for="checkbox1">I agree to the terms</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-10">
+                                        <button type="submit" name="addButton" class="btn btn-success">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+    <!--START: Content Wrap-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Carbonhydrate</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                                <th>Gram</th>
+                                <th>Calori</th>
+                                <th>Season</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Carbonhydrate</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                                <th>Gram</th>
+                                <th>Calori</th>
+                                <th>Season</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (Food item in Model)
+                            {
+
+                                <tr>
+                                    <td class="col-sm-2">@item.Name</td>
+                                    <td class="col-sm-1">@item.Carbonhydrate</td>
+                                    <td class="col-sm-1">@item.Protein</td>
+                                    <td class="col-sm-1">@item.Fat</td>
+                                    <td class="col-sm-1">@item.Gram</td>
+                                    <td class="col-sm-1">@item.Calori</td>
+                                    <td class="col-sm-1">@item.Season.Name</td>
+                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-lg col-md-offset-3">Update</button></td>
+                                    <td class="col-sm-1">
+
+
+                                    @Html.ActionLink("       Delete       ", "FoodDelete","Food",new {@foodID=item.ID},new {@class= "btn btn-danger btn-lg col-md-offset-3" })
+                                        @*<button type="button" class="btn btn-danger btn-lg">Delete</button>*@
+                                    
+                                    </td>
+                                   
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+  

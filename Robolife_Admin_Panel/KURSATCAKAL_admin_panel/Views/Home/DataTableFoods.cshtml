@@ -1,0 +1,92 @@
+﻿@using System.Web.Optimization;
+@using Robolife_Admin_Data_Layer
+@model IEnumerable<Food>
+
+@{
+    ViewBag.Title = "DataTableFoods";
+
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+
+    //@Scripts.Render("~/Html_Empty/assets/plugins/datatable/jquery.dataTables.min.js")
+    //@Scripts.Render("~/Html_Empty/assets/plugins/datatable/dataTables.bootstrap.min.js")
+    //Sytem.Web.Optimization referansını eklemeden bundle olayını kullanamazsın.
+    //Sytem.Web.Optimization'ı Microsoft.AspNet.Web.Optimization olarak Nuget'ten ekliyceksin.
+
+
+}
+
+
+
+<div class="page-header">
+    <h1>Data Tables <small>Bootstrap Data Table</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="index.php">Tables</a></li>
+        <li class="active">Data Table</li>
+    </ol>
+</div>
+
+<div class="content-wrap">
+    <!--START: Content Wrap-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Carbonhydrate</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                                <th>Gram</th>
+                                <th>Calori</th>
+                                <th>Season</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Carbonhydrate</th>
+                                <th>Protein</th>
+                                <th>Fat</th>
+                                <th>Gram</th>
+                                <th>Calori</th>
+                                <th>Season</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                                @foreach (Food item in Model)
+                                {
+
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Carbonhydrate</td>
+                                <td>@item.Protein</td>
+                                <td>@item.Fat</td>
+                                <td>@item.Gram</td>
+                                <td>@item.Calori</td>
+                                <td>@item.Season.Name</td>
+
+
+                            </tr>
+                                }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>  

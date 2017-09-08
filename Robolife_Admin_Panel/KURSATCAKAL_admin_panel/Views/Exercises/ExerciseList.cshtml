@@ -1,0 +1,211 @@
+﻿@using Robolife_Admin_Data_Layer
+@model List<ExercisesAct>
+@{
+    ViewBag.Title = "ExerciseList";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<div class="page-header">
+    <h1>
+        Data Tables ><small>
+            Exercise Table
+
+
+        </small>
+    </h1>
+
+</div>
+<div class="col-md-12" align="center">
+
+
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal6">
+        Exercises Manage
+    </button>
+    <h3 style="color:red">
+
+        @TempData["ExercisePieceDeleteException"]
+        @TempData["ExerciseAddUpdateException"]
+        @TempData["DeleteSuccess"]
+        @TempData["AdditionSuccess"]
+        @{
+            TempData["ExercisePieceDeleteException"] = "";
+            TempData["ExerciseAddUpdateException"] = "";
+            TempData["DeleteSuccess"] = "";
+            TempData["AdditionSuccess"] = "";
+        }
+
+
+    </h3>
+</div>
+<div class="modal modal-success fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-body" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Exercies</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="col-md-14">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Exercise Management</h3>
+                        </div>
+                        @using (Html.BeginForm("ExerciseAddUpdate", "Exercises", FormMethod.Post))
+                        {
+
+                            <div class="panel-body">
+
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="inputImage" class="col-sm-3 control-label pull-left">Image</label>
+                                        <div class="col-sm-9">
+                                            <select name="imageID" class="form-control custom-Select">
+                                                @foreach (Image item in ViewBag.Image)
+                                                {
+
+                                                    <option value="@item.ID">
+                                                        @item.Name [CDate--->] @item.CreationDate
+                                                    </option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputTargetRegion" class="col-sm-3 control-label pull-left">Target Region</label>
+                                        <div class="col-sm-9">
+                                            <select name="targetID" class="form-control custom-Select">
+                                                @foreach (CrashArea item in ViewBag.CrashArea)
+                                                {
+
+                                                    <option value="@item.ID">@item.Name</option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label for="inputName" class="col-sm-3 control-label pull-left">Exercise Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="exerciseName" class="form-control" id="exerciseName" placeholder="Exercise Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputUrl" class="col-sm-3 control-label pull-left">Description</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUrl" class="col-sm-3 control-label pull-left">Description URL</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="descriptionURL" class="form-control" id="descriptionURL" placeholder="Training Video">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox1" class="styled" type="checkbox" checked>
+                                                <label for="checkbox1">I agree to the terms</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" name="addButton" class="btn btn-success">Add</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+    <!--START: Content Wrap-->
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                    <div class="tools">
+                        <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                        <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-dataTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Description URL</th>
+                                <th>Target Region</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Description URL</th>
+                                <th>Target Region</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (ExercisesAct item in Model)
+                            {
+
+                                <tr>
+                                   
+                                    <td>@item.Name</td>
+                                    <td><img class="col-md-offset-2" style="width:120px;height:120px;" src="@item.Image.MiddlePath" /></td>
+                                    <td>@item.Description</td>
+                                    <td><a href="@item.DescriptionURL">@item.DescriptionURL</a></td>
+                                    <td>@item.CrashArea.Name</td>
+
+                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-lg col-md-offset-2">Update</button></td>
+                                    <td class="col-sm-1">
+
+
+                                        @Html.ActionLink("       Delete       ", "ExerciseDelete", "Exercises", new { @exerciseID = item.ID }, new { @class = "btn btn-danger btn-lg col-md-offset-2"})
+                                        @*<button type="button" class="btn btn-danger btn-lg">Delete</button>*@
+
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
