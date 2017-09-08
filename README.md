@@ -1,6 +1,6 @@
 MicrosoftSummerCamp
 
-http://kursatcakalrobolifeadmin.azurewebsites.net/
+http://kursatcakalrobolifeadmin.azurewebsites.net/ <br>
 http://robolifewebapi.azurewebsites.net/
 Parametreler
         [Route("Robolife/GetUsers")]
