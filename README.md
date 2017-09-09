@@ -1,6 +1,7 @@
 <h2>Microsoft Summer Camp Project</h2>
 <br>
 <h5>Admin paneli için authentication default olarak ayarlıdır.Authentication için Back-End kısmında MVC Identity Membership kullanılmıştır.<br></h5>
+<h5>Wep API DB First kullanılarak tasarlanmıştır.Foreign Key Constraintler admin panelinin aksine veri güvenliği için askıya alınmıştır.</h5>
 
 <h6>http://kursatcakalrobolifeadmin.azurewebsites.net/ <br></h6>
 <h6>http://robolifewebapi.azurewebsites.net/ <br></h6>
