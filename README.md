@@ -1,15 +1,15 @@
 <h2>Microsoft Summer Camp Project</h2>
 <br>
-Admin paneli için authentication default olarak ayarlıdır.Authentication için Back-End kısmında MVC Identity Membership kullanılmıştır.<br>
+<h2>Admin paneli için authentication default olarak ayarlıdır.Authentication için Back-End kısmında MVC Identity Membership kullanılmıştır.<br></h2>
 
 http://kursatcakalrobolifeadmin.azurewebsites.net/ <br>
 http://robolifewebapi.azurewebsites.net/ <br>
-Parametreler
-        [Route("Robolife/GetUsers")]
-        [Route("Robolife/GetUserById")]
-        [Route("Robolife/PutUser/{id}/{user}")]
-        [Route("Robolife/PostUser/{user}")]
-        [Route("Robolife/DeleteUser/{id}")][.....]
+<h1>Parametreler<br></h1>
+        <h1>[Route("Robolife/GetUsers")]<br></h1>
+        <h1>[Route("Robolife/GetUserById")]<br></h1>
+        <h1>[Route("Robolife/PutUser/{id}/{user}")]<br></h1>
+        <h1>[Route("Robolife/PostUser/{user}")]<br></h1>
+        <h1>[Route("Robolife/DeleteUser/{id}")][.....]<br></h1>
 
 
 ![alt text](https://github.com/KursatCAKAL/MicrosoftSummerCamp/blob/master/Robolife_Screenshoots/Robolife_AdminPanel_Nutration_Example.png)
