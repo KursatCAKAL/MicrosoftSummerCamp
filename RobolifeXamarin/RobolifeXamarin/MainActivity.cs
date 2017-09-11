@@ -264,8 +264,7 @@ namespace App6
             int  y, z, k, l;
 
             double a;
-
-            ;
+            a = Convert.ToDouble(ReceiveDetections(this));
 
             int counter = 1;
         
