@@ -33,7 +33,7 @@ namespace App6
         //private WebSettings webSettingsKullan;
 
         private SurfaceView cameraView;
-        public static int boyBaslangic;
+        public static int baslangic;
         private CameraSource cameraSource;
         private const int RequestCameraPermissionID = 1001;
         private TextView textView;//text recognizer analizer
@@ -272,7 +272,7 @@ namespace App6
             {
                 case 1:
                     
-                    for (double i = 0; i < boyBaslangic; i += a)
+                    for (double i = 0; i < baslangic; i += a)
                     {
                         System.Threading.Thread.Sleep(50);
                         RunOnUiThread(() => txtBoyDeger.Text = df.Format(i / 0.9).ToString());
@@ -289,7 +289,7 @@ namespace App6
                     counter++;
                     break;
                 case 2:
-                    for (double i = 0; i < boyBaslangic; i += a)
+                    for (double i = 0; i < baslangic; i += a)
                     {
                         System.Threading.Thread.Sleep(50);
                         RunOnUiThread(() => txtBoyDeger.Text = df.Format(i / 0.9).ToString());
@@ -306,7 +306,7 @@ namespace App6
                     counter++;
                     break;
                 case 3:
-                    for (double i = 0; i < boyBaslangic; i += a)
+                    for (double i = 0; i < baslangic; i += a)
                     {
                         System.Threading.Thread.Sleep(50);
                         RunOnUiThread(() => txtBoyDeger.Text = df.Format(i / 0.9).ToString());
@@ -323,7 +323,7 @@ namespace App6
                     counter++;
                     break;
                 case 4:
-                    for (double i = 0; i < boyBaslangic; i += a)
+                    for (double i = 0; i < baslangic; i += a)
                     {
                         System.Threading.Thread.Sleep(50);
                         RunOnUiThread(() => txtBoyDeger.Text = df.Format(i / 0.9).ToString());
